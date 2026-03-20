@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* SmartWardrobe palette */
+    --background: 0.968 0.008 185;
+    --foreground: 0.165 0.018 250;
+    --card: 1 0 0;
+    --card-foreground: 0.165 0.018 250;
+    --popover: 1 0 0;
+    --popover-foreground: 0.165 0.018 250;
+    --primary: 0.645 0.115 175;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.898 0.062 163;
+    --secondary-foreground: 0.165 0.018 250;
+    --muted: 0.952 0.025 168;
+    --muted-foreground: 0.525 0.012 265;
+    --accent: 0.898 0.062 163;
+    --accent-foreground: 0.165 0.018 250;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 1 0 0;
+    --border: 0.88 0.03 175;
+    --input: 0.88 0.03 175;
+    --ring: 0.645 0.115 175;
+
+    /* Custom tokens */
+    --hero-overlay: 0.205 0.045 220;
+    --footer-bg: 0.228 0 0;
+    --testimonials-bg: 0.941 0.028 70;
+    --feature-section-bg: 0.968 0.008 185;
+    --btn-dark: 0.292 0.038 215;
+    --mint-highlight: 0.898 0.062 163;
+    --teal-accent: 0.645 0.115 175;
+
+    --chart-1: 0.645 0.115 175;
+    --chart-2: 0.75 0.08 163;
+    --chart-3: 0.55 0.09 200;
+    --chart-4: 0.82 0.07 140;
+    --chart-5: 0.48 0.13 185;
+
+    --sidebar: 1 0 0;
+    --sidebar-foreground: 0.165 0.018 250;
+    --sidebar-primary: 0.645 0.115 175;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.952 0.025 168;
+    --sidebar-accent-foreground: 0.165 0.018 250;
+    --sidebar-border: 0.88 0.03 175;
+    --sidebar-ring: 0.645 0.115 175;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+}
+
+@layer utilities {
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      oklch(var(--hero-overlay) / 0.92) 0%,
+      oklch(var(--hero-overlay) / 0.7) 50%,
+      transparent 100%
+    );
+  }
+
+  .nav-active-underline {
+    position: relative;
+  }
+
+  .nav-active-underline::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: oklch(var(--teal-accent));
+    border-radius: 9999px;
+  }
+
+  .wear-bar {
+    height: 6px;
+    border-radius: 9999px;
+    background: oklch(var(--border));
+  }
+
+  .wear-bar-fill {
+    height: 100%;
+    border-radius: 9999px;
+    background: oklch(var(--teal-accent));
+    transition: width 0.5s ease;
+  }
+}
